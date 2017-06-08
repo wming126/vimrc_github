@@ -12,11 +12,15 @@
 "    -> For () {} <> []
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" =>  让配置变更立即生效
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => For () {} <> []
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" inoremap ( ()<ESC>i
-" inoremap [ []<ESC>i
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
 " inoremap { {}<ESC>i
 " inoremap < <><ESC>i
 
@@ -62,4 +66,25 @@ autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()  "如�
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" =>  Surport mouse
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=a
+
+" =>  For additional vim c++ syntax highlighting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+"let g:cpp_experimental_simple_template_highlight = 1
+"let g:cpp_experimental_template_highlight = 1
+"let g:cpp_concepts_highlight = 1
+
+" => Some system copy maps  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap <Leader>y "+y    "设置快捷键将选中文本块复制至系统剪贴板
+nmap <Leader>p "+p        "设置快捷键将系统剪贴板内容粘贴至 vim
+
+
 

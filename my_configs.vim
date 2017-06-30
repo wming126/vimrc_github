@@ -86,5 +86,23 @@ let g:cpp_member_variable_highlight = 1
 vnoremap <Leader>y "+y    "设置快捷键将选中文本块复制至系统剪贴板
 nmap <Leader>p "+p        "设置快捷键将系统剪贴板内容粘贴至 vim
 
+" For omnicppcomplete plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set completeopt=menu,menuone  
+let OmniCpp_MayCompleteDot=1             "  打开  . 操作符
+let OmniCpp_MayCompleteArrow=1           "打开 -> 操作符
+let OmniCpp_MayCompleteScope=1           "打开 :: 操作符
+let OmniCpp_NamespaceSearch=1            "打开命名空间
+let OmniCpp_GlobalScopeSearch=1  
+let OmniCpp_DefaultNamespace=["std"]  
+let OmniCpp_ShowPrototypeInAbbr=1        "打开显示函数原型
+let OmniCpp_SelectFirstItem = 2          "自动弹出时自动跳至第一个
+
+
+" For ctags create tags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>tt :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR> 
+
+
 
 

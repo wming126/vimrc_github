@@ -1,55 +1,24 @@
-Ubuntu 安装字体方法  
+# Ubuntu 安装字体方法  
 
-字体安装方法
-命令安装：
-        以微软雅黑字体为例（其他的宋体、黑体等点阵字体都一样的），我们的雅黑字体文件是：Yahei.ttf(放在自己的主目录下）(在widows目录的Fonts目录下找需要的字体）
-由于我是双系统，我直接从Win7中复制了 msyh.ttf和msyhbd.ttf 到Ubuntu下
-
-1在/usr/share/fonts/下新建文件夹 如：winFonts目录，准备把从windows下拷贝过来的字体都放在这个目录里，这里就是把雅黑字体Yahei.ttf 放进来
+1. 在/usr/share/fonts/下新建文件夹 如：winFonts目录，准备的字体都放在这个目录里
+```
 sudo mkdir -p /usr/share/fonts/winFonts
-
-2然后将字体文件拷贝到此文件夹下
+```
+2. 然后将字体文件拷贝到此文件夹下
+```
 sudo cp /home/username(用户名)/fonts/Yahei.ttf /usr/share/fonts/winFonts/
 
-3然后，改变权限：
+```
+3. 然后，改变权限：
+```
 sudo chmod 644 /usr/share/fonts/winFonts/Yahei.ttf 
-(改成755也没问题的，但起码要444,修改雅黑字体文件的权限为644，即当前用户读写，当前组用户只读，其他用户只读）
+```
+(改成755也没问题的，但起码要444,修改字体文件的权限为644，即当前用户读写，当前组用户只读，其他用户只读）
 
-4开始安装：
+4. 开始安装：
+```
 cd /usr/share/fonts/winFonts/
-sudo mkfontscale （创建雅黑字体的fonts.scale文件，它用来控制字体旋转缩放）
-sudo mkfontdir （创建雅黑字体的fonts.dir文件，它用来控制字体粗斜体产生）
-sudo fc-cache -fv （建立字体缓存信息，也就是让系统认识认识雅黑）
-
-5、sudo gedit /etc/fonts/language-selector.conf （可选）
-（打开语言选择设置文件）
-分别找到
-Bitstream Vera Serif
-Bitstream Vera Sans
-Bitstream Vera Sans Mono
-分别添加
-Microsoft YaHei
-
-6、在菜单中 系统－首选项－字体 可以找到 “微软雅黑”
-
-也可批量安装字体。在主目录下建立一个字体Fonts文件夹。(所有字体放在其中）
-sudo mkdir -p /usr/share/fonts/winFonts
-sudo cp ／home/zengq/Fonts/* /usr/share/fonts/winFonts/
-然后，改变权限：
-代码:
-sudo chmod 644 /usr/share/fonts/winFonts/*
-开始安装：
-cd /usr/share/fonts/winFonts/
-sudo mkfontscale
-sudo mkfontdir
-sudo fc-cache -fv
-
-Fontmtraix安装字体：
-
-Fontmatrix 软件下载地址：
-http://dl.getdropbox.com/u/378247/Software/Ubuntu/fontmatrix_0.4.2-2_i386.deb
-或者通过立得新、ubuntu软件中心安装
-
-打开Fontmatrix,软件是英文到，我们需要用到两个操作
-1：File => Import => 选择字体所在文件夹 => 选择要安装的字体 => OK
-2：Edit => Active All current => OK
+sudo mkfontscale （创建字体的fonts.scale文件，它用来控制字体旋转缩放）
+sudo mkfontdir （创建字体的fonts.dir文件，它用来控制字体粗斜体产生）
+sudo fc-cache -fv （建立字体缓存信息，也就是让系统认识认识字体）
+```
